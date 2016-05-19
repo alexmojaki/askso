@@ -1,0 +1,8 @@
+.tox
+*.egg*
+*.log
+*.png
+*.pyc
+build
+dist
+README.html

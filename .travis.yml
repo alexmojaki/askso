@@ -1,0 +1,8 @@
+sudo: false
+language: python
+install: pip install tox
+before_script:
+- python askso/server.py &
+- sleep 2
+script:
+- tox

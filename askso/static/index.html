@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>AskSO - StackOverflow Python Question Assistant</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style type="text/css" media="screen">
+        .editor {
+            width: 100%;
+            height: 20em;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>AskSO - StackOverflow Python Question Assistant</h3>
+
+    <p id="main-message">Loading...</p>
+
+    <p><input class="btn btn-success" type="button" style="display: none;" id="next-button"></p>
+
+    <textarea cols="100" rows="20" id="question" hidden="hidden"></textarea>
+
+    <div id="expected-output" hidden="hidden">
+        <p>Expected output:</p>
+        <div id="output-editor" class="editor"></div>
+    </div>
+
+    <div id="codearea" hidden="hidden">
+        <p>Code:</p>
+        <div id="code-editor" class="editor">print('Hello world!')</div>
+        <p><input class="btn btn-primary" type="button" value="Run" id="run"></p>
+        <p id="code-message" hidden="hidden"></p>
+        <div id="stdin-error" class="alert alert-danger" hidden="hidden"><span class="glyphicon glyphicon-exclamation-sign"></span>
+            Sorry, you can't get input from the user here!
+            <br>
+            Rewrite your code to contain all the input you need. For example, replace:
+            <pre>name = input('What is your name? ')</pre>
+            with:
+            <pre>name = 'John'</pre>
+            or replace:
+<pre>
+for i in range(3):
+    num = input('Enter a number: ')
+    # Use num somehow
+</pre>
+            with:
+<pre>
+for num in [3, 5, 2]:
+    # Use num somehow
+</pre>
+        </div>
+        <div id="results"></div>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

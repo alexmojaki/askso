@@ -11,7 +11,11 @@ generally expects you to show that you've tried something.
 
 To install: run ``pip install ask-so`` in a terminal. You will need
 ``pip``, which you can install with the instructions
-`here <https://pip.pypa.io/en/stable/installing/>`__.
+`here <https://pip.pypa.io/en/stable/installing/>`__. On Linux/OSX you
+may need to run ``sudo pip install ask-so``. If nothing works, you can
+`download the
+source <https://github.com/alexmojaki/askso/archive/1.0.4.zip>`__, unzip
+it, and run ``python setup.py`` inside.
 
 To use:
 

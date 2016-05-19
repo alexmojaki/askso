@@ -5,7 +5,7 @@ AskSO - StackOverflow Python Question Assistant
 
 This is a tool to help you construct a good question about Python on [StackOverflow](http://stackoverflow.com/), although it can help with other forums too. It assumes that you've written some code that isn't behaving correctly. This should not be a problem, as StackOverflow generally expects you to show that you've tried something.
 
-To install: run `pip install ask-so` in a terminal. You will need `pip`, which you can install with the instructions [here](https://pip.pypa.io/en/stable/installing/).
+To install: run `pip install ask-so` in a terminal. You will need `pip`, which you can install with the instructions [here](https://pip.pypa.io/en/stable/installing/). On Linux/OSX you may need to run `sudo pip install ask-so`. If nothing works, you can [download the source](https://github.com/alexmojaki/askso/archive/1.0.4.zip), unzip it, and run `python setup.py` inside.
 
 To use:
 

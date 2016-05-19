@@ -7,7 +7,7 @@ with open('README.rst', encoding='utf8') as readme_file:
 
 setup(
     name='ask-so',
-    version='1.0.3',
+    version='1.0.4',
     description='AskSO - StackOverflow Python Question Assistant',
     long_description=readme,
     author='Alex Hall',

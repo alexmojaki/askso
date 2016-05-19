@@ -1,6 +1,8 @@
 AskSO - StackOverflow Python Question Assistant
 -----
 
+[![Join the chat at https://gitter.im/alexmojaki/askso](https://badges.gitter.im/alexmojaki/askso.svg)](https://gitter.im/alexmojaki/askso?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/alexmojaki/askso.svg?branch=master)](https://travis-ci.org/alexmojaki/askso)
 
 This is a tool to help you construct a good question about Python on [StackOverflow](http://stackoverflow.com/), although it can help with other forums too. It assumes that you've written some code that isn't behaving correctly. This should not be a problem, as StackOverflow generally expects you to show that you've tried something.

@@ -1,5 +1,7 @@
 from __future__ import print_function
 
+from codecs import open
+
 from askso.utils import multiline
 
 
@@ -39,10 +41,10 @@ class FileTracker(object):
 
     def try_read(self, path):
         try:
-            with open(path) as f:
+            with open(path, encoding='ascii') as f:
                 max_lines = 15
                 max_bytes = max_lines * 200
-                data = f.read(max_bytes + 1).decode('ascii')
+                data = f.read(max_bytes + 1)
 
             if len(data) > max_bytes or len(data.splitlines()) > max_lines:
                 return multiline("""

@@ -1,5 +1,6 @@
 # coding=utf-8
 import inspect
+import platform
 import unittest
 from functools import partial
 
@@ -73,7 +74,7 @@ class Test(unittest.TestCase):
         run = find(IDs.run)
 
         def set_editor_text(name, text):
-            driver.execute_script(u"%s_editor.setValue('%s')" % (name, text))
+            driver.execute_script("%s_editor.setValue('%s')" % (name, text))
 
         set_code = partial(set_editor_text, 'code')
         set_output = partial(set_editor_text, 'output')
@@ -141,9 +142,10 @@ class Test(unittest.TestCase):
             self.assertTrue(actual_text.endswith(
                 "\n\n"
                 "*Maybe add some more explanation and details. Make it clear what you're asking.*\n\n"
-                "I am running Python 2.7.10.\n\n"
+                "I am running Python %s.\n\n"
                 "----------\n\n"
-                "*This question was written with the help of [AskSO](https://github.com/alexmojaki/askso).*"))
+                "*This question was written with the help of [AskSO](https://github.com/alexmojaki/askso).*"
+                % platform.python_version()))
             self.assertTrue('This is the result I want:\n\n    ' in actual_text)
             self.assertTrue(text in actual_text)
 
@@ -171,14 +173,15 @@ class Test(unittest.TestCase):
                 'Error:',
                 'Traceback')
         displayed()
-        run_code('import time;time.sleep(1)')
+        run_code('import time;time.sleep(3)')
         displayed(IDs.code_message)
         self.assertEqual(find(IDs.code_message).text, 'Running...')
-        time.sleep(1.2)
+        time.sleep(5)
         self.assertEqual(find(IDs.code_message).text, 'There was no output at all.')
         results()
-        run_code(u'open("/tmp/__empty", "w"); open("/tmp/__unicode", "w").write("é"); '
-                 u'[open("/tmp/__n%s" % i, "w").write(str(i)) for i in range(3)]')
+        run_code('open("/tmp/__empty", "w")\\n'
+                 'open("/tmp/__unicode", "w").write(chr(150))\\n'
+                 '[open("/tmp/__n%s" % i, "w").write(str(i)) for i in range(3)]')
         results('The file /tmp/__empty is empty.',
                 'Contents of the file /tmp/__n0:',
                 '0',

@@ -19,7 +19,7 @@ def index():
 def run():
     # noinspection PyBroadException
     try:
-        return json.dumps(execute(request.get_data()))
+        return json.dumps(execute(request.get_data().decode('utf8')))
     except:
         return traceback.format_exc(), 500
 

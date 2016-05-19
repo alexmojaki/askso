@@ -1,3 +1,5 @@
+import sys
+from codecs import open
 from textwrap import dedent
 
 
@@ -6,10 +8,10 @@ def multiline(message):
 
 
 def write_to_path(path, text):
-    with open(path, 'w') as f:
+    with open(path, 'w', encoding=sys.getfilesystemencoding()) as f:
         f.write(text)
 
 
 def read_from_path(path):
-    with open(path) as f:
+    with open(path, encoding=sys.getfilesystemencoding()) as f:
         return f.read()

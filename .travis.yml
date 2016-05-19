@@ -2,7 +2,9 @@ sudo: false
 language: python
 install: pip install tox
 before_script:
+- ls askso
 - python askso/server.py &
-- sleep 2
+- ps aux | grep server.py
+- sleep 10
 script:
 - tox

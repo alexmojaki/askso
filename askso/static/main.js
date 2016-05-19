@@ -92,7 +92,10 @@ $(document).ready(function () {
             code_message.hide();
             results.append(
                 '<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> ' +
-                'There was an error on the server!</div>' +
+                'There was an error on the server! ' +
+                'Please <a href="https://github.com/alexmojaki/askso/issues/new">submit a bug report</a> or ' +
+                'email <a href="mailto:alex.mojaki@gmail.com">alex.mojaki@gmail.com</a>. ' +
+                'Include the traceback below, your code, and your OS and python version.</div>' +
                 '<pre>' + response.responseText + '</pre>');
         });
         return false;

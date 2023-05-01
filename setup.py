@@ -21,7 +21,7 @@ setup(
         'console_scripts': ['askso=askso.server:main'],
     },
     install_requires=[
-        'Flask >= 0.10.0, < 2.0.0',
+        'Flask >= 0.10.0, < 3.0.0',
     ],
     classifiers=[
         'License :: OSI Approved :: MIT License',
